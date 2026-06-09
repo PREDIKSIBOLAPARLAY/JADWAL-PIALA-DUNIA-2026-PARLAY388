@@ -5,29 +5,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jadwal Pertandingan & Prediksi Bola</title>
+<title>Jadwal Pertandingan & Prediksi Bola - PIALA DUNIA 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:'Poppins', Arial, sans-serif;
 }
 
 body{
-    background:url('https://blogger.googleusercontent.com/img/a/AVvXsEhGJIGUrO1-W2v952nSps1QKVzblSv5N_5--Vs2z6SNRhQx7NlZ_9lXdYxNP9avXi5erszrNe2g8DAiTze83WDAaK5vJYs3I8vxlBugdefVFw3Pd8pJ4jcx5TuTKTrQNSaGlOyCHqbr3B2la6-McsRbww9SLcLDcCX7DMM6fif1UyqgtuBu5EPL5FUC_Xc') center center fixed;
+    min-height:100vh;
+    overflow-x:hidden;
+    background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)), url('https://blogger.googleusercontent.com/img/a/AVvXsEhGJIGUrO1-W2v952nSps1QKVzblSv5N_5--Vs2z6SNRhQx7NlZ_9lXdYxNP9avXi5erszrNe2g8DAiTze83WDAaK5vJYs3I8vxlBugdefVFw3Pd8pJ4jcx5TuTKTrQNSaGlOyCHqbr3B2la6-McsRbww9SLcLDcCX7DMM6fif1UyqgtuBu5EPL5FUC_Xc') center center fixed;
     background-size:cover;
     color:#fff;
 }
 
-/* HERO */
-
+/* HERO AREA */
 .hero{
     position:relative;
     height:280px;
     background:url('https://blogger.googleusercontent.com/img/a/AVvXsEj1HWriANZqBRBsz_o1745j2Gs5kLNigfN4DqP9uKID-PHQEUiJ_lVI4fX1QFOxwpIuXWUxOUPQM5lv4TTnycnY_UlUQdl1snU1mfcSEIsL3fQXLQDhR_ta2I8lKjOaYl9GeaKVgp-TwpuSzLvSQ5j4fQy2fRl-Aey3uqakePkVdH_LvkjO1CRSFoZsHyU') center center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero::before{
@@ -40,11 +47,6 @@ body{
 .hero-content{
     position:relative;
     z-index:2;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
     text-align:center;
     padding:20px;
 }
@@ -53,51 +55,242 @@ body{
     font-size:32px;
     font-weight:900;
     margin-bottom:10px;
+    text-shadow: 0 0 10px rgba(255,215,0,0.5);
 }
 
 .hero-content p{
     color:#ddd;
     font-size:15px;
+    font-weight: 600;
 }
 
-/* LOGIN */
-
+/* LOGIN BUTTON */
 .login-btn{
     position:absolute;
     top:15px;
     right:15px;
-    z-index:3;
+    z-index:99;
     text-decoration:none;
     background:#00a2ff;
     color:#fff;
     padding:10px 18px;
     border-radius:30px;
     font-weight:bold;
+    transition: .3s;
 }
 
-/* CONTENT */
+.login-btn:hover {
+    background: #0082cc;
+    transform: scale(1.05);
+}
 
+/* MAIN CONTAINER */
 .container{
+    width:95%;
     max-width:700px;
-    margin:auto;
-    padding:15px;
+    margin: 20px auto;
+    padding:25px;
+    backdrop-filter:blur(8px);
+    background:rgba(0,0,0,.45);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:25px;
+    box-shadow:0 0 30px rgba(255,215,0,.1);
 }
 
+.logo-top{
+    font-size:16px;
+    font-weight:700;
+    color:#ffd700;
+    letter-spacing:3px;
+    margin-bottom:15px;
+    text-align: center;
+    animation:pulse 2s infinite;
+}
+
+.hero-logo img{
+    max-width: 200px;
+    width: 90%;
+    filter: drop-shadow(0 0 15px rgba(255,215,0,.8));
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* RUNNING TEXT / MARQUEE */
+.running-text {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgba(0,0,0,0.65);
+    padding: 12px 0;
+    border-radius: 12px;
+    border: 1px solid rgba(250, 171, 12, 0.3);
+    margin: 15px 0;
+}
+
+.running-text span {
+    display: inline-block;
+    padding-left: 100%;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    animation: marquee 22s linear infinite;
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* SLIDER MATCH STYLE */
+.slider-container{
+    position:relative;
+    margin:25px 0;
+    overflow:hidden;
+    border-radius:20px;
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.slider{
+    display:flex;
+    transition:transform .6s ease;
+}
+
+.slide{
+    min-width:100%;
+    padding:25px;
+    text-align:center;
+}
+
+.slide-title{
+    font-size:14px;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:5px;
+    letter-spacing: 1px;
+}
+
+.slide-time{
+    font-size:18px;
+    font-weight:800;
+    color:#ffd700;
+    margin-bottom:15px;
+}
+
+.match{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+.team{
+    width:32%;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.team img{
+    width:65px;
+    height:65px;
+    object-fit:contain;
+    margin-bottom:8px;
+}
+
+.score-box{
+    width:36%;
+    text-align:center;
+}
+
+.score{
+    font-size:38px;
+    font-weight:800;
+    color:#fff;
+    margin-bottom:10px;
+    letter-spacing: 2px;
+}
+
+.bet-now{
+    display:inline-block;
+    padding:10px 22px;
+    background:linear-gradient(45deg,#b8860b,#ffd700);
+    color:#000;
+    font-weight:800;
+    border-radius:10px;
+    text-decoration:none;
+    transition: .3s;
+    box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+}
+
+.bet-now:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px gold;
+}
+
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+    z-index:10;
+    transition: .3s;
+}
+
+.arrow:hover { background: rgba(255,255,255,0.3); }
+.prev{ left:10px; }
+.next{ right:10px; }
+
+/* DOTS SLIDER */
+.dots{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    padding-bottom:15px;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#555;
+    cursor:pointer;
+    transition: .3s;
+}
+
+.dot.active{
+    background:#ffd700;
+    box-shadow:0 0 10px gold;
+}
+
+/* JADWAL & PREDIKSI LIST */
 .judul{
     text-align:center;
-    font-size:24px;
+    font-size:22px;
     font-weight:bold;
-    margin:20px 0;
+    margin:25px 0 15px 0;
+    color: #ffd700;
+    border-bottom: 2px solid rgba(250, 171, 12, 0.4);
+    padding-bottom: 8px;
 }
-
-/* MATCH CARD */
 
 .match-card{
     background:#1e1e1e;
-    border-left:4px solid #faab0c
+    border-left:4px solid #faab0c;
     border-radius:10px;
-    padding:12px;
+    padding:14px;
     margin-bottom:12px;
+    text-align: left;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-right: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .match-time{
@@ -112,568 +305,579 @@ body{
     font-weight:bold;
     line-height:1.4;
     margin-bottom:6px;
+    color: #fff;
 }
 
 .match-league{
     color:#bbb;
     font-size:12px;
-    margin-bottom:8px;
+    margin-bottom:10px;
 }
 
 .match-score{
     display:inline-block;
     background:#faab0c;
-    padding:6px 10px;
+    color: #000;
+    padding:6px 12px;
     border-radius:6px;
+    font-weight:bold;
+    font-size: 13px;
+}
+
+/* BANNER & PROMO AREA */
+.separator-banner {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.separator-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* FLOATING SOSMED BUTTON */
+.sosmed-container{
+    position:fixed;
+    left:15px;
+    bottom:20px;
+    z-index:999999;
+}
+
+#btnSosmed{
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:15px;
+    background:#111;
+    color:#faab0c;
+    font-size:30px;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,.4);
+    transition: .3s;
+}
+
+#btnSosmed:hover { transform: scale(1.05); }
+
+.sosmed-text{
+    position:absolute;
+    left:70px;
+    bottom:10px;
+    width:170px; 
+    background:#faab0c;
+    color:#fff;
+    padding:5px;
+    border-radius:8px;
+    font-size:12px;
     font-weight:bold;
 }
 
-/* MOBILE */
+.sosmed-menu{
+    display:none;
+    margin-bottom:10px;
+}
 
+.sosmed-menu a{
+    display:block;
+    background:#fff;
+    color:#000;
+    padding:10px;
+    margin-bottom:5px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size: 13px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* ANIMATIONS */
+@keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:.6;}
+}
+
+/* MOBILE RESPONSIVE */
 @media(max-width:768px){
-
-.hero{
-    height:220px;
+    .hero{ height:200px; }
+    .hero-content h1{ font-size:22px; }
+    .hero-content p{ font-size:13px; }
+    .judul{ font-size:18px; }
+    .match-team{ font-size:14px; }
+    .score { font-size: 32px; }
+    .team img { width: 55px; height: 55px; }
 }
-
-.hero-content h1{
-    font-size:24px;
-}
-
-.hero-content p{
-    font-size:13px;
-}
-
-.judul{
-    font-size:20px;
-}
-
-.match-team{
-    font-size:14px;
-}
-
-}
-
 </style>
 </head>
-<style>
-/* RUNNING TEXT */
-.running-text {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    background: rgba(0,0,0,0.55);
-    padding: 10px 0;
-    border-radius: 12px;
-}
 
-.running-text span {
-    display: inline-block;
-    padding-left: 100%;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 16px;
-    animation: marquee 18s linear infinite;
-}
+<body>
 
-@keyframes marquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-</style>
+<div class="hero">
+    <a href="https://parlaycpet.com/" class="login-btn" target="_blank">LOGIN</a>
+    <div class="hero-content">
+        <h1>⚽ JADWAL & PREDIKSI SEPAK BOLA</h1>
+        <p>Partner Resmi Piala Dunia FIFA 2026 Pintarbola</p>
+    </div>
+</div>
 
-
-  <!-- RUNNING TEXT -->
-<div class="col-12 my-2">
+<!-- RUNNING TEXT PROMO -->
+<div class="container" style="background:transparent; border:none; box-shadow:none; margin-bottom:0; padding-bottom:0; padding-top: 0;">
     <div class="running-text">
         <span>
             🔥 Prediksi Terupdate Setiap Hari • Jadwal Bola Terlengkap • Bonus Depo 10% Setiap Hari • Deposit Mudah via QRIS • Proses Deposit & Withdraw Tercepat • Hanya di PARLAY388 🔥
         </span>
     </div>
 </div>
-                      
- 
-<body>
 
-<div class="hero">
-
-<a href="https://parlaycpet.com/" class="login-btn" target="_blank">
-LOGIN
-</a>
-
-<div class="hero-content">
-<h1>⚽ JADWAL & PREDIKSI SEPAK BOLA</h1>
-<p>PREDIKSI TERUPDATE SETIAP HARI HANYA DI PARLAY388</p>
-</div>
-
-</div>
-
+<!-- CONTENT CONTAINER utama -->
 <div class="container">
 
-<div class="judul">
-JADWAL & PREDIKSI SCORE 09 JUNI 2026
-</div>
-
-<div class="match-card">
-    <div class="match-time">16:00 WIB</div>
-    <div class="match-team">Equatorial Guinea vs Comoros</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 0</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">17:00 WIB</div>
-    <div class="match-team">Cambodia vs Hong Kong</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 2</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">18:30 WIB</div>
-    <div class="match-team">Philippines vs Myanmar</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 2 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">18:35 WIB</div>
-    <div class="match-team">China vs Thailand</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">19:00 WIB</div>
-    <div class="match-team">Tanzania vs Rwanda</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 0</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">19:00 WIB</div>
-    <div class="match-team">Angola vs Central African Republic</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 2 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">19:00 WIB</div>
-    <div class="match-team">Kuwait vs Oman</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">19:00 WIB</div>
-    <div class="match-team">Botswana vs Niger</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 2</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">19:30 WIB</div>
-    <div class="match-team">Kyrgyzstan vs Palestine</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">20:00 WIB</div>
-    <div class="match-team">Indonesia vs Mozambique</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 2 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">20:00 WIB</div>
-    <div class="match-team">Australia U19 vs Cambodia U19</div>
-    <div class="match-league">ASEAN Championship U19</div>
-    <div class="match-score">Prediksi: 3 - 0</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">21:00 WIB</div>
-    <div class="match-team">Bahrain vs Syria</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 2</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">22:00 WIB</div>
-    <div class="match-team">Albania U17 vs Ukraina U17</div>
-    <div class="match-league">U17 UEFA European Championship</div>
-    <div class="match-score">Prediksi: 2 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">22:00 WIB</div>
-    <div class="match-team">Tajikistan vs India</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 2</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">22:00 WIB</div>
-    <div class="match-team">Armenia vs Moldova</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 2 - 0</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">22:15 WIB</div>
-    <div class="match-team">Irlandia U21 vs Qatar U21</div>
-    <div class="match-league">U21 Friendly Games</div>
-    <div class="match-score">Prediksi: 2 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">23:00 WIB</div>
-    <div class="match-team">DR Congo vs Chile</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 2</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">23:00 WIB</div>
-    <div class="match-team">Moldova U21 vs Georgia U21</div>
-    <div class="match-league">U21 Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 2</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">23:30 WIB</div>
-    <div class="match-team">Belarus vs Burkina Faso</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 1</div>
-</div>
-
-<div class="hero-content">
-</div>
-
-<p><br /></p><div class="separator" style="clear: both; text-align: center;"><a href="https://parlaycpet.com/" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="77" data-original-width="250" height="99" src="https://cdn.mixlink.top/global/seamless/510/IDR/logo/163409698.png" width="320" /></a></div><br /><br /><br /><br /><p></p><div class="container">
-<div class="judul">
-JADWAL & PREDIKSI SCORE 10 JUNI 2026
-</div>
-
-<div class="match-card">
-    <div class="match-time">00:00 WIB</div>
-    <div class="match-team">Hungary vs Kazakhstan</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 2 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">00:00 WIB</div>
-    <div class="match-team">Russia vs Trinidad and Tobago</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">00:30 WIB</div>
-    <div class="match-team">San Marino vs Azerbaijan</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 2 - 0</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">01:00 WIB</div>
-    <div class="match-team">Togo vs Benin</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 0</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">01:30 WIB</div>
-    <div class="match-team">Liberia vs Sierra Leone</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">02:00 WIB</div>
-    <div class="match-team">UD Almeria vs Castellon</div>
-    <div class="match-league">LaLiga 2, Promotion Playoffs, Semifinals</div>
-    <div class="match-score">Prediksi: 2 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">05:00 WIB</div>
-    <div class="match-team">Cleveland Force SC vs Akron City FC</div>
-    <div class="match-league">USL, League Two</div>
-    <div class="match-score">Prediksi: 3 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">06:00 WIB</div>
-    <div class="match-team">Delaware FC vs West Chester United</div>
-    <div class="match-league">USL, League Two</div>
-    <div class="match-score">Prediksi: 1 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">06:00 WIB</div>
-    <div class="match-team">Northern Virginia FC vs Charlottesville Blues</div>
-    <div class="match-league">USL, League Two</div>
-    <div class="match-score">Prediksi: 2 - 0</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">06:00 WIB</div>
-    <div class="match-team">Northern Virginia FC vs Charlottesville Blues</div>
-    <div class="match-league">USL, League Two</div>
-    <div class="match-score">Prediksi: 2 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">06:00 WIB</div>
-    <div class="match-team">Northern Virginia FC vs Charlottesville Blues</div>
-    <div class="match-league">USL, League Two</div>
-    <div class="match-score">Prediksi: 2 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">06:00 WIB</div>
-    <div class="match-team">Senegal vs Saudi Arabia</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 2 - 0</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">07:00 WIB</div>
-    <div class="match-team">Laredo Heat SC vs Lonestar</div>
-    <div class="match-league">USL, League Two</div>
-    <div class="match-score">Prediksi: 2 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">07:00 WIB</div>
-    <div class="match-team">Birmingham Legion FC vs Corpus Christi FC</div>
-    <div class="match-league">USL Cup</div>
-    <div class="match-score">Prediksi: 2 - 0</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">08:00 WIB</div>
-    <div class="match-team">Argentina vs Iceland</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 2</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">08:00 WIB</div>
-    <div class="match-team">Bolivia vs Algeria</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 2</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">08:00 WIB</div>
-    <div class="match-team">Iraq vs Venezuela</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 2</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">18:30 WIB</div>
-    <div class="match-team">DR Congo U20 vs Arab Saudi</div>
-    <div class="match-league">Tournoi Maurice Revello</div>
-    <div class="match-score">Prediksi: 0 - 3</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">22:30 WIB</div>
-    <div class="match-team">Leca FC vs GD Vitoria Sernache</div>
-    <div class="match-league">Portugal Cup Final</div>
-    <div class="match-score">Prediksi: 1 - 1</div>
-</div>
-
-<div class="match-card">
-    <div class="match-time">23:00 WIB</div>
-    <div class="match-team">Pakistan vs Afghanistan</div>
-    <div class="match-league">International Friendly Games</div>
-    <div class="match-score">Prediksi: 1 - 2</div>
-</div>
-
-</div>
-
-</tbody>
-</table>
-</google-sheets-html-origin>
-
-<div class="separator"></div>
+    <div class="logo-top">⚽ FIFA WORLD CUP 2026 ⚽</div>
     
-  </tbody>
-</table>
-</google-sheets-html-origin>
+    <div class="hero-logo">
+        <img src="https://cdn.mixlink.top/global/seamless/510/IDR/logo/163409698.png" alt="PARLAY388">
+    </div>
+
+    <!-- MATCH HERO SLIDER -->
+    <div class="slider-container">
+        <button class="arrow prev" onclick="prevSlide()">❮</button>
+        <button class="arrow next" onclick="nextSlide()">❯</button>
+
+        <div class="slider" id="slider">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <div class="slide-title">⚽ FIFA WORLD CUP 2026 ⚽</div>
+                <div class="slide-time">12 JUN 2026 — 02:00 WIB</div>
+                <div class="match">
+                    <div class="team">
+                        <img src="https://i.ibb.co/zHHgyp3Y/image.png" alt="Mexico">
+                        <div>Mexico</div>
+                    </div>
+                    <div class="score-box">
+                        <div class="score">0 : 0</div>
+                        <a href="https://parlaycpet.com/" target="_blank" class="bet-now">BET NOW</a>
+                    </div>
+                    <div class="team">
+                        <img src="https://i.ibb.co/9mvXxzHp/image.png" alt="South Africa">
+                        <div>South Africa</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-title">⚽ FIFA WORLD CUP 2026 ⚽</div>
+                <div class="slide-time">12 JUN 2026 — 09:00 WIB</div>
+                <div class="match">
+                    <div class="team">
+                        <img src="https://i.ibb.co/2JKxxDx/image.png" alt="South Korea">
+                        <div>South Korea</div>
+                    </div>
+                    <div class="score-box">
+                        <div class="score">0 : 0</div>
+                        <a href="https://parlaycpet.com/" target="_blank" class="bet-now">BET NOW</a>
+                    </div>
+                    <div class="team">
+                        <img src="https://i.ibb.co/0RntzQwp/image.png" alt="Czech Republic">
+                        <div>Czech Republic</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-title">⚽ FIFA WORLD CUP 2026 ⚽</div>
+                <div class="slide-time">13 JUN 2026 — 02:00 WIB</div>
+                <div class="match">
+                    <div class="team">
+                        <img src="https://i.ibb.co/KpTLPk1X/image.png" alt="Canada">
+                        <div>Canada</div>
+                    </div>
+                    <div class="score-box">
+                        <div class="score">0 : 0</div>
+                        <a href="https://parlaycpet.com/" target="_blank" class="bet-now">BET NOW</a>
+                    </div>
+                    <div class="team">
+                        <img src="https://i.ibb.co/2fRDm5H/image.png" alt="Bosnia">
+                        <div>Bosnia Herzegovina</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <div class="slide-title">⚽ FIFA WORLD CUP 2026 ⚽</div>
+                <div class="slide-time">13 JUN 2026 — 02:00 WIB</div>
+                <div class="match">
+                    <div class="team">
+                        <img src="https://i.ibb.co/Xr4rr91F/image.png" alt="USA">
+                        <div>USA</div>
+                    </div>
+                    <div class="score-box">
+                        <div class="score">0 : 0</div>
+                        <a href="https://parlaycpet.com/" target="_blank" class="bet-now">BET NOW</a>
+                    </div>
+                    <div class="team">
+                        <img src="https://i.ibb.co/svbtZf0H/image.png" alt="Paraguay">
+                        <div>Paraguay</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dots Navigation -->
+        <div class="dots">
+            <div class="dot active" onclick="showSlide(0)"></div>
+            <div class="dot" onclick="showSlide(1)"></div>
+            <div class="dot" onclick="showSlide(2)"></div>
+            <div class="dot" onclick="showSlide(3)"></div>
+        </div>
+    </div>
+
+    <!-- JADWAL 09 JUNI 2026 -->
+    <div class="judul">JADWAL & PREDIKSI SCORE 09 JUNI 2026</div>
+
+    <div class="match-card">
+        <div class="match-time">16:00 WIB</div>
+        <div class="match-team">Equatorial Guinea vs Comoros</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 0</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">17:00 WIB</div>
+        <div class="match-team">Cambodia vs Hong Kong</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 2</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">18:30 WIB</div>
+        <div class="match-team">Philippines vs Myanmar</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 2 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">18:35 WIB</div>
+        <div class="match-team">China vs Thailand</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">19:00 WIB</div>
+        <div class="match-team">Tanzania vs Rwanda</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 0</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">19:00 WIB</div>
+        <div class="match-team">Angola vs Central African Republic</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 2 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">19:00 WIB</div>
+        <div class="match-team">Kuwait vs Oman</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">19:00 WIB</div>
+        <div class="match-team">Botswana vs Niger</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 2</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">19:30 WIB</div>
+        <div class="match-team">Kyrgyzstan vs Palestine</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">20:00 WIB</div>
+        <div class="match-team">Indonesia vs Mozambique</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 2 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">20:00 WIB</div>
+        <div class="match-team">Australia U19 vs Cambodia U19</div>
+        <div class="match-league">ASEAN Championship U19</div>
+        <div class="match-score">Prediksi: 3 - 0</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">21:00 WIB</div>
+        <div class="match-team">Bahrain vs Syria</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 2</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">22:00 WIB</div>
+        <div class="match-team">Albania U17 vs Ukraina U17</div>
+        <div class="match-league">U17 UEFA European Championship</div>
+        <div class="match-score">Prediksi: 2 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">22:00 WIB</div>
+        <div class="match-team">Tajikistan vs India</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 2</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">22:00 WIB</div>
+        <div class="match-team">Armenia vs Moldova</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 2 - 0</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">22:15 WIB</div>
+        <div class="match-team">Irlandia U21 vs Qatar U21</div>
+        <div class="match-league">U21 Friendly Games</div>
+        <div class="match-score">Prediksi: 2 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">23:00 WIB</div>
+        <div class="match-team">DR Congo vs Chile</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 2</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">23:00 WIB</div>
+        <div class="match-team">Moldova U21 vs Georgia U21</div>
+        <div class="match-league">U21 Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 2</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">23:30 WIB</div>
+        <div class="match-team">Belarus vs Burkina Faso</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 1</div>
+    </div>
+
+    <!-- SEPARATOR BANNER 1 -->
+    <div class="separator-banner">
+        <a href="https://parlaycpet.com/" target="_blank">
+            <img src="https://cdn.mixlink.top/global/seamless/510/IDR/logo/163409698.png" width="320" alt="Banner Seamless">
+        </a>
+    </div>
+
+    <!-- JADWAL 10 JUNI 2026 -->
+    <div class="judul">JADWAL & PREDIKSI SCORE 10 JUNI 2026</div>
+
+    <div class="match-card">
+        <div class="match-time">00:00 WIB</div>
+        <div class="match-team">Hungary vs Kazakhstan</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 2 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">00:00 WIB</div>
+        <div class="match-team">Russia vs Trinidad and Tobago</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">00:30 WIB</div>
+        <div class="match-team">San Marino vs Azerbaijan</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 2 - 0</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">01:00 WIB</div>
+        <div class="match-team">Togo vs Benin</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 0</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">01:30 WIB</div>
+        <div class="match-team">Liberia vs Sierra Leone</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">02:00 WIB</div>
+        <div class="match-team">UD Almeria vs Castellon</div>
+        <div class="match-league">LaLiga 2, Promotion Playoffs, Semifinals</div>
+        <div class="match-score">Prediksi: 2 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">05:00 WIB</div>
+        <div class="match-team">Cleveland Force SC vs Akron City FC</div>
+        <div class="match-league">USL, League Two</div>
+        <div class="match-score">Prediksi: 3 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">06:00 WIB</div>
+        <div class="match-team">Delaware FC vs West Chester United</div>
+        <div class="match-league">USL, League Two</div>
+        <div class="match-score">Prediksi: 1 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">06:00 WIB</div>
+        <div class="match-team">Northern Virginia FC vs Charlottesville Blues</div>
+        <div class="match-league">USL, League Two</div>
+        <div class="match-score">Prediksi: 2 - 0</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">06:00 WIB</div>
+        <div class="match-team">Senegal vs Saudi Arabia</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 2 - 0</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">07:00 WIB</div>
+        <div class="match-team">Laredo Heat SC vs Lonestar</div>
+        <div class="match-league">USL, League Two</div>
+        <div class="match-score">Prediksi: 2 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">07:00 WIB</div>
+        <div class="match-team">Birmingham Legion FC vs Corpus Christi FC</div>
+        <div class="match-league">USL Cup</div>
+        <div class="match-score">Prediksi: 2 - 0</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">08:00 WIB</div>
+        <div class="match-team">Argentina vs Iceland</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 2</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">08:00 WIB</div>
+        <div class="match-team">Bolivia vs Algeria</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 2</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">08:00 WIB</div>
+        <div class="match-team">Iraq vs Venezuela</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 2</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">18:30 WIB</div>
+        <div class="match-team">DR Congo U20 vs Arab Saudi</div>
+        <div class="match-league">Tournoi Maurice Revello</div>
+        <div class="match-score">Prediksi: 0 - 3</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">22:30 WIB</div>
+        <div class="match-team">Leca FC vs GD Vitoria Sernache</div>
+        <div class="match-league">Portugal Cup Final</div>
+        <div class="match-score">Prediksi: 1 - 1</div>
+    </div>
+    <div class="match-card">
+        <div class="match-time">23:00 WIB</div>
+        <div class="match-team">Pakistan vs Afghanistan</div>
+        <div class="match-league">International Friendly Games</div>
+        <div class="match-score">Prediksi: 1 - 2</div>
+    </div>
+
+    <!-- MARKETING BOTTOM PROMO -->
+    <div style="text-align:center; margin-top:40px;">
+        <div style="font-size:20px; font-weight:bold; margin-bottom:15px; color:#ffffff;">
+            Betting pertandingan hanya di<br>
+            ╰┈➤ <a href="https://parlaycpet.com/" target="_blank" style="color:#2bf321;text-decoration:none; font-weight: 800;">PARLAY388</a> ◀
+        </div>
+
+        <a href="https://parlaycpet.com/" target="_blank">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjrjyoiU7aojRu9G3oWzNgtP1igKY3c0QaLIonty6m0Ej2kbLJEpoQpyPgO7EksT-pMAYbBnCJTjMtwIG6PF8MzMXxU_pmVfPHab7fhWabsZ-cjIqSzFMQRrl0zZEoX3FIohBvmpNFe7mo1bWIMX7qniMrKgBDeUTPiWq90BxR7DV2UeIUU-LmApt5hyT5L=w680-h204" style="max-width:100%; border-radius:10px; margin-bottom: 20px;">
+        </a>
+
+        <div style="margin-top:10px; margin-bottom:15px; font-size:18px; font-weight:bold; color:#ffd700;">
+            PROVIDER SPORTBOOK TERBAIK #PARLAY388
+        </div>
+
+        <a href="https://parlaycpet.com/" target="_blank">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCj01yvs1inbcrl0GDyX2n-HCkxwaxXn_h6AOwQkxNdEhdYM7rG3BgV2AyoGXjHOxQodpxYZk01RsGTDwN9_2WmwJkHv7LU8nviihDRTrHq1MofDV08SpMM0s7AQyM4E7HQEdKKXKl9I0FAY4-xqqP6QVlnYgmC5pq9X29s5qwt46n8mzj92LiL_p5lwPP/w572-h323/parlay388gif.gif" style="max-width:400px; width:100%; border-radius: 8px;">
+        </a>
+    </div>
 
 </div>
-<div style="text-align:center; margin-top:40px;">
 
-    <div style="
-        font-size:22px;
-        font-weight:bold;
-        margin-bottom:20px;
-        font-family:Verdana,sans-serif;
-        color:#ffffff;
-    ">
-        Betting pertandingan hanya di<br>
-        ╰┈➤
-        <a href="https://parlaycpet.com/"
-           target="_blank"
-           style="color:#2bf321;text-decoration:none;">
-           PARLAY388
-        </a>
-        <<
+<!-- FLOATING SOCIAL MEDIA MENU -->
+<div class="sosmed-container">
+    <div class="sosmed-menu">
+        <a href="https://t.me/Officialparlay" target="_blank">📩 Telegram</a>
+        <a href="https://wa.me/+6287746331849" target="_blank">💬 WhatsApp</a>
+        <a href="https://facebook.com/61584545414503" target="_blank">📘 Facebook</a>
+        <a href="https://instagram.com/kesyaparlayy/" target="_blank">📷 Instagram</a>
     </div>
-
-    <a href="https://parlaycpet.com/" target="_blank">
-        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjrjyoiU7aojRu9G3oWzNgtP1igKY3c0QaLIonty6m0Ej2kbLJEpoQpyPgO7EksT-pMAYbBnCJTjMtwIG6PF8MzMXxU_pmVfPHab7fhWabsZ-cjIqSzFMQRrl0zZEoX3FIohBvmpNFe7mo1bWIMX7qniMrKgBDeUTPiWq90BxR7DV2UeIUU-LmApt5hyT5L=w680-h204"
-             style="max-width:100%; border-radius:10px;">
-    </a>
-
-    <div style="
-        margin-top:20px;
-        margin-bottom:20px;
-        font-size:20px;
-        font-weight:bold;
-        color:#ffd700;
-        font-family:Verdana,sans-serif;
-    ">
-        PROVIDER SPORTBOOK TERBAIK #PARLAY388
+    <div class="sosmed-text">
+        <marquee scrollamount="3">🔰 KLIK DISINI 🔰FOLLOW ALL SOSMED 𝐏𝐀𝐑𝐋𝐀𝐘𝟑𝟖𝟖 📢 𝑹𝑬𝑺𝑷𝑶𝑵 𝑺𝑬𝑪𝑬𝑷𝑨𝑻 𝑲𝑰𝑳𝑨𝑻 ⚡️</marquee>
     </div>
+    <button id="btnSosmed">☰</button>
+</div>
 
-    <a href="https://parlaycpet.com/" target="_blank">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCj01yvs1inbcrl0GDyX2n-HCkxwaxXn_h6AOwQkxNdEhdYM7rG3BgV2AyoGXjHOxQodpxYZk01RsGTDwN9_2WmwJkHv7LU8nviihDRTrHq1MofDV08SpMM0s7AQyM4E7HQEdKKXKl9I0FAY4-xqqP6QVlnYgmC5pq9X29s5qwt46n8mzj92LiL_p5lwPP/w572-h323/parlay388gif.gif"
-             style="max-width:400px;width:100%;">
-    </a>
-<!-- isi tabel kamu di sini -->
-<table>
-  ...
-</table>
+<!-- Zendesk Widget -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=a0a17d25-2ced-4090-8a66-e89bf3fa1b22"> </script>
 
-<!-- TARUH SCRIPT DI SINI -->
+<!-- SLIDER LOGIC SCRIPT -->
 <script>
-document.addEventListener("keydown", function (e) {
-  // F12
-  if (e.key === "F12") {
-    e.preventDefault();
-    return false;
-  }
+let currentSlide = 0;
+const slider = document.getElementById("slider");
+const dots = document.querySelectorAll(".dot");
+const totalSlides = document.querySelectorAll(".slide").length;
 
-  // Ctrl + Shift + I
-  if (e.ctrlKey && e.shiftKey && e.key === "I") {
-    e.preventDefault();
-    return false;
-  }
+function showSlide(index){
+    if(index >= totalSlides) currentSlide = 0;
+    else if(index < 0) currentSlide = totalSlides - 1;
+    else currentSlide = index;
 
-  // Ctrl + Shift + J
-  if (e.ctrlKey && e.shiftKey && e.key === "J") {
-    e.preventDefault();
-    return false;
-  }
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-  // Ctrl + U
-  if (e.ctrlKey && e.key === "U") {
-    e.preventDefault();
-    return false;
-  }
-});
+    dots.forEach(dot => dot.classList.remove("active"));
+    if(dots[currentSlide]) {
+        dots[currentSlide].classList.add("active");
+    }
+}
+
+function nextSlide(){ showSlide(currentSlide + 1); }
+function prevSlide(){ showSlide(currentSlide - 1); }
+
+// Auto play slider tiap 5 detik
+setInterval(() => { nextSlide(); }, 5000);
 </script>
+
+<!-- FLOATING SOSMED TOGGLE SCRIPT -->
 <script>
+document.getElementById("btnSosmed").onclick = function(){
+    var menu = document.querySelector(".sosmed-menu");
+    if(menu.style.display === "block"){
+        menu.style.display = "none";
+    }else{
+        menu.style.display = "block";
+    }
+}
+</script>
+
+<!-- SECURITY SYSTEM SCRIPTS -->
+<script>
+// Blokir Klik Kanan
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Blokir Keyboard Inspection (F12, Ctrl+U, Ctrl+Shift+I, dll)
 document.addEventListener("keydown", function (e) {
   if (
-    e.key === "F12" ||
+    e.key === "F12" || e.keyCode === 123 ||
     (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
-    (e.ctrlKey && e.key === "U")
+    (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
+    (e.ctrlKey && (e.key === "u" || e.key === "U" || e.keyCode === 85)) ||
+    (e.ctrlKey && (e.key === "s" || e.key === "S" || e.keyCode === 83))
   ) {
     e.preventDefault();
     e.stopPropagation();
     return false;
   }
 });
+
+// Deteksi Jika DevTools Terbuka (Mengubah Resolusi Window)
+setInterval(function(){
+  if(
+    window.outerWidth - window.innerWidth > 160 ||
+    window.outerHeight - window.innerHeight > 160
+  ) {
+    document.body.innerHTML = "<h1 style='color:white;text-align:center;margin-top:100px;font-family:sans-serif;'>ACCESS DENIED</h1>";
+  }
+}, 1000);
 </script>
-<!-- Start of  Zendesk Widget script -->
-<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=a0a17d25-2ced-4090-8a66-e89bf3fa1b22"> </script>
-<!-- End of  Zendesk Widget script -->
-</div>
-<div class="sosmed-container">
 
-<div class="sosmed-text">
-<marquee>🔰 KLIK DISINI 🔰FOLLOW ALL SOSMED 𝐏𝐀𝐑𝐋𝐀𝐘𝟑𝟖𝟖 📢 𝑹𝑬𝑺𝑷𝑶𝑵 𝑺𝑬𝑪𝑬𝑷𝑨𝑻 𝑲𝑰𝑳𝑨𝑻 ⚡️</marquee>
-</div>
-
-<div class="sosmed-menu">
-<a href="https://t.me/Officialparlay" target="_blank">📩 Telegram</a>
-<a href="https://wa.me/+6287746331849" target="_blank">💬 WhatsApp</a>
-<a href="https://facebook.com/61584545414503" target="_blank">📘 Facebook</a>
-<a href="https://instagram.com/kesyaparlayy/" target="_blank">📷 Instagram</a>
-</div>
-
-<button id="btnSosmed">☰</button>
-
-</div>
-
-<style>
-.sosmed-container{
-position:fixed;
-left:15px;
-bottom:20px;
-z-index:999999;
-}
-
-#btnSosmed{
-width:60px;
-height:60px;
-border:none;
-border-radius:15px;
-background:#111;
-color:#f7c948;
-font-size:30px;
-cursor:pointer;
-box-shadow:0 4px 10px rgba(0,0,0,.4);
-}
-
-.sosmed-text{
-position:absolute;
-left:70px;
-bottom:10px;
-width:170px; 
-background:#faab0c;
-color:#fff;
-padding:5px;
-border-radius:8px;
-font-size:12px;
-font-weight:bold;
-}
-
-.sosmed-menu{
-display:none;
-margin-bottom:10px;
-}
-
-.sosmed-menu a{
-display:block;
-background:#fff;
-color:#000;
-padding:10px;
-margin-bottom:5px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-}
-</style>
-
-<script>
-document.getElementById("btnSosmed").onclick = function(){
-var menu = document.querySelector(".sosmed-menu");
-
-if(menu.style.display === "block"){
-menu.style.display = "none";
-}else{
-menu.style.display = "block";
-}
-}
-</script>
 </body>
 </html>
